@@ -1,17 +1,36 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > target)
+      continue;
+
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] + array[i] === target)
+        return true;
+    }
+  }
+  return false;
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  O(n²)
 */
 
 /* 
-  Add your pseudocode here
+  Loop through array starting at index 0
+    Nested loop through array starting at index 1
+      if main loop index + nested loop index = target
+        return true
+  if never returned true
+    return false
 */
 
 /*
-  Add written explanation of your solution here
+  Loop through array starting at index 0
+    Nested loop through array starting at index 1
+      if main loop index + nested loop index = target
+        return true
+  if never returned true
+    return false
 */
 
 // You can run `node index.js` to view these console logs
